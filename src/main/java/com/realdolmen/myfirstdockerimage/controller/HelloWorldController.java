@@ -1,12 +1,15 @@
 package com.realdolmen.myfirstdockerimage.controller;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloWorld {
+public class HelloWorldController {
     @RequestMapping("/")
-    public String home() {
+    public String home(Model model) {
+
+        model.addAttribute("course", "DevOps");
         return "Hello Docker World";
     }
 
